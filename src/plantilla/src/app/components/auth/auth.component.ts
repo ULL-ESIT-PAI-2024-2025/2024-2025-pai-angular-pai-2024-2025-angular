@@ -26,9 +26,10 @@ export class AuthComponent {
    * @returns {boolean} True if login is successful, otherwise false.
    */
   public login(username: string, password: string): boolean {
+    console.log(`Attempting to log in with username: ${username} and password: ${password}`);
     if (username === 'admin' && password === 'admin') {
       this.isLoggedIn = true;
-      this.loginStatus.emit(this.isLoggedIn);
+      this.loginStatus.emit(true);
       this.router.navigate(['/home']);
       return true;
     }

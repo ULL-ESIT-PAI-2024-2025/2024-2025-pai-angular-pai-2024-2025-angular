@@ -1,1 +1,6 @@
-<p>home works!</p>
+<div class="home">
+  <app-auth #auth></app-auth>
+  <h1>Bienvenido al Home</h1>
+  <p>Has iniciado sesion: {{ auth.isUserLoggedIn() }}</p>
+  <button (click)="auth.logout()">Cerrar Sesión</button>
+</div>  

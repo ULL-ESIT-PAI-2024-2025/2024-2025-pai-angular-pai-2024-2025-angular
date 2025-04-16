@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { AuthComponent } from '../auth/auth.component';
 import { FormsModule } from '@angular/forms';
 
@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent {
+export class LoginComponent implements AfterViewInit {
   username: string = '';
   password: string = '';
   errorLoginMessage: string = 'Username or password incorrect';
@@ -26,15 +26,25 @@ export class LoginComponent {
     }
   }
 
-  public getUsername(): string {
-    return this.username;
+  public ngAfterViewInit(): void {
+    if (this.auth) {
+      console.log('AuthComponent is initialized:', this.auth);
+    } else {
+      console.error('AuthComponent failed to initialize.');
+    }
   }
 
-  public getPassword(): string {
-    return this.password;
+  onSubmit(): void {
+    if (this.auth) {
+      this.auth.login(this.username, this.password);
+    }
   }
 
-  public getErrorLoginMessage(): string {
-    return this.errorLoginMessage;
+  handleLoginStatus(isLoggedIn: boolean): void {
+    if (isLoggedIn) {
+      console.log('User is logged in');
+    } else {
+      console.log('Login failed');
+    }
   }
 }
