@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@angular/core": "^19.2.6",
+    "@angular/platform-server": "^19.2.6",
+    "@angular/router": "^19.2.6",
+    "@angular/ssr": "^19.2.7"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14"
+  }
+}

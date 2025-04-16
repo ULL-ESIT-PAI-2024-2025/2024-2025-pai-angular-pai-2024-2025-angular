@@ -1,2 +1,15 @@
-<p>login works!</p>
-<button (click)="login()">Login</button>
+<div class ="login-container">
+  <h2>Iniciar Sessión</h2>
+  <app-auth> #auth</app-auth>
+  <form (ngSubmit)="auth.login(username, password)">
+    <div>
+      <label for="username">Usuario:</label>
+      <input type="text" id="username" [(ngModel)]="username" name="username" required>
+    </div>
+    <div>
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" required>
+    </div>
+    <button type="submit">Iniciar Sesión</button>
+  </form>
+</div>
