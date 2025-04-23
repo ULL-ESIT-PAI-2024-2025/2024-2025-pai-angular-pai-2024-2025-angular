@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
-import { AuthComponent } from '../auth/auth.component';
+import { AuthService } from '../../auth.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [AuthComponent],
+  imports: [RouterModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  
+  constructor(private authService: AuthService) {}
+
+  logout(): void {
+    this.authService.logout();
+  }
 }

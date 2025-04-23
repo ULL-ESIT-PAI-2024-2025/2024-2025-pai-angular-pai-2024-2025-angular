@@ -1,50 +1,27 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { AuthComponent } from '../auth/auth.component';
+import { Component } from '@angular/core';
+import { AuthService } from '../../auth.service';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, AuthComponent],
+  imports: [FormsModule, RouterModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements AfterViewInit {
+export class LoginComponent {
   username: string = '';
   password: string = '';
-  errorLoginMessage: string = 'Username or password incorrect';
+  errorMessage: string = '';
 
-  @ViewChild('auth') auth!: AuthComponent;
-  
-  /**
-   * Show an error message if the login was not successful.
-   * @param succes If the login was successful
-   */
-  public login(succes: boolean): void {
-    if (!succes) {
-      this.errorLoginMessage;
-    }
-  }
-
-  public ngAfterViewInit(): void {
-    if (this.auth) {
-      console.log('AuthComponent is initialized:', this.auth);
-    } else {
-      console.error('AuthComponent failed to initialize.');
-    }
-  }
+  constructor(private authService: AuthService) {}
 
   onSubmit(): void {
-    if (this.auth) {
-      this.auth.login(this.username, this.password);
-    }
-  }
-
-  handleLoginStatus(isLoggedIn: boolean): void {
-    if (isLoggedIn) {
-      console.log('User is logged in');
+    if (this.authService.login(this.username, this.password)) {
+      this.errorMessage = '';
     } else {
-      console.log('Login failed');
+      this.errorMessage = 'Invalid username or password';
     }
   }
 }

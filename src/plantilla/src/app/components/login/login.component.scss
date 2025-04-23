@@ -1,10 +1,9 @@
-.login-container {
+.container {
   max-width: 400px;
-  margin: 100px auto;
+  margin: 50px auto;
   padding: 20px;
-  border: 1px solid lightblue;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  text-align: center;
 }
 
 div {
@@ -19,23 +18,23 @@ label {
 input {
   width: 100%;
   padding: 8px;
-  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 button {
   padding: 10px 20px;
-  background-color: lightblue;
+  background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: deepskyblue;
+  background-color: #0056b3;
 }
 
-.error-message {
+p {
   color: red;
-  margin-top: 10px;
 }
