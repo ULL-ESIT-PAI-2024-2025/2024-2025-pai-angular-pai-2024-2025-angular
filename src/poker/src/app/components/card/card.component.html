@@ -1,0 +1,11 @@
+<div
+  class="card"
+  [ngClass]="{ 'card-interactive': interactive }"
+>
+  <img
+    [src]="cardImagePath()"
+    [alt]="cardAlt"
+    class="card-image"
+    (error)="handleImageError($event)"
+  />
+</div>

@@ -19,7 +19,7 @@
     "module": "ES2022",
     "baseUrl": "./",
     "paths": {
-      "@assets": ["src/assets/*"],
+      "@/*": ["src/app/*"],
     }
   },
   "angularCompilerOptions": {

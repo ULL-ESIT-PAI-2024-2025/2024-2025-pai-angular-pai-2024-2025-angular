@@ -59,11 +59,11 @@ export abstract class Card {
 
   /**
    * Retrieves the numerical value of the card's rank.
-   * 
+   *
    * - For face cards (Ace, King, Queen, Jack), it returns their respective
    *   numerical values: Ace as 14, King as 13, Queen as 12, and Jack as 11.
    * - For other ranks, it converts the rank to a number and returns it.
-   * 
+   *
    * @returns {number} The numerical value of the card's rank.
    */
   getNumberedValue(): number {
@@ -83,10 +83,10 @@ export abstract class Card {
 
   /**
    * Retrieves the name of the card as a string, combining its rank and suit.
-   * 
+   *
    * The rank is represented by its name (e.g., "A" for Ace, "K" for King, etc.),
    * and the suit is represented by the first character of its name.
-   * 
+   *
    * @returns {string} The formatted card name, e.g., "AS" for Ace of Spades,
    * "KH" for King of Hearts, or "10C" for Ten of Clubs.
    */
@@ -109,7 +109,7 @@ export abstract class Card {
 
   /**
    * Compares the current card with another card to determine their relative order.
-   * 
+   *
    * @param other - The card to compare with the current card.
    * @returns A negative number if the current card is less than the other card,
    *          zero if they are equal, or a positive number if the current card
@@ -119,7 +119,7 @@ export abstract class Card {
 
   /**
    * Compares the current card with another card based on their ranks.
-   * 
+   *
    * @param other - The card to compare with the current card.
    * @returns A negative number if the current card's rank is less than the other card's rank,
    *          zero if their ranks are equal, or a positive number if the current card's rank

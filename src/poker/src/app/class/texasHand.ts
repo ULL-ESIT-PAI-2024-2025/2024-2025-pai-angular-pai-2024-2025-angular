@@ -206,11 +206,11 @@ export class TexasHand extends Hand {
 
   /**
    * Compares the current TexasHand instance with another hand to determine their relative ranking.
-   * 
+   *
    * @param otherHand - The other TexasHand to compare against.
    * @param tableCards - The community cards on the table used for evaluation.
-   * @returns A negative number if the current hand is ranked lower, 
-   *          a positive number if it is ranked higher, 
+   * @returns A negative number if the current hand is ranked lower,
+   *          a positive number if it is ranked higher,
    *          or 0 if both hands are of equal rank.
    */
   compareTo(otherHand: TexasHand, tableCards: Hand): number {
@@ -236,7 +236,7 @@ export class TexasHand extends Hand {
     for (let i = 0; i < thisSorted.length; i++) {
       const diff = thisSorted[i].compareTo(otherSorted[i]);
       if (diff !== 0) {
-        return diff; 
+        return diff;
       }
     }
     return 0;
