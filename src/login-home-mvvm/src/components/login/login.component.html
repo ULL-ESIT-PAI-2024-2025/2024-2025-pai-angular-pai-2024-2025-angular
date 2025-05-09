@@ -1,0 +1,31 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <img src="assets/img/icono-ull-blanco.png" alt="Logo" class="header-logo">
+    <span class="navbar-item">Universidad de La Laguna</span>
+  </div>
+</nav>
+<div class="login-container">
+  <h1 class="login-title">Iniciar Sesión</h1>
+  <div class="login-cube box">
+    <div class="field">
+      <label class="label">Usuario</label>
+      <div class="control">
+        <input class="input" type="text" [(ngModel)]="username" placeholder="Usuario">
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Contraseña</label>
+      <div class="control">
+        <input class="input" type="password" [(ngModel)]="password" placeholder="Contraseña">
+      </div>
+    </div>
+    <div class="field">
+      <div class="control">
+        <button class="button is-primary" (click)="login()">Iniciar Sesión</button>
+      </div>
+    </div>
+    @if (errorMessage) {
+      <p class="has-text-danger">{{ errorMessage }}</p>
+    }
+  </div>
+</div>

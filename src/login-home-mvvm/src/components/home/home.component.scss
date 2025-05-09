@@ -1,0 +1,70 @@
+/* Configuración global para el fondo blanco */
+body {
+  background-color: #ffffff;
+  margin: 0;
+}
+
+/* Personalización de la barra de navegación */
+.navbar {
+  background-color: #5C068C !important; /* Morado como en el banner */
+  min-height: 60px; /* Ajuste de altura */
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar-item {
+  color: #ffffff !important;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Contenedor principal centrado */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px); /* Ajuste según la altura del nav */
+}
+
+/* Título más grande */
+.home-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* Personalización del cubo gris */
+.home-cube {
+  background-color: #D3D3D3;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.home-content {
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.button.is-primary {
+  background-color: #5C068C !important;
+  border: none;
+  font-size: 18px;
+}
+
+.button.is-primary:hover {
+  background-color: #4a055f !important;
+}
