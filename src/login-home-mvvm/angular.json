@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "plantilla": {
+    "login-home-mvvm": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/plantilla",
+            "outputPath": "dist/login-home-mvvm",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "plantilla:build:production"
+              "buildTarget": "login-home-mvvm:build:production"
             },
             "development": {
-              "buildTarget": "plantilla:build:development"
+              "buildTarget": "login-home-mvvm:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -103,8 +103,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "5a5cd788-014a-4c7c-bfab-f6a3a20ca813"
   }
 }

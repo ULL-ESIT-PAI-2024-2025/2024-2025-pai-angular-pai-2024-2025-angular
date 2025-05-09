@@ -1,5 +1,5 @@
 {
-  "name": "plantilla",
+  "name": "login-home-mvvm",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:plantilla": "node dist/plantilla/server/server.mjs"
+    "serve:ssr:login-home-mvvm": "node dist/login-home-mvvm/server/server.mjs"
   },
   "private": true,
   "dependencies": {

@@ -15,15 +15,8 @@
     "experimentalDecorators": true,
     "moduleResolution": "bundler",
     "importHelpers": true,
-    "baseUrl": "./",
     "target": "ES2022",
-    "module": "ES2022",
-    "paths": {
-      "@app/": ["src/app/"],
-      "@components/": ["src/app/components/"],
-      "@assets/": ["src/assets/"],
-      "@src/": ["src/"],
-    }
+    "module": "ES2022"
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
