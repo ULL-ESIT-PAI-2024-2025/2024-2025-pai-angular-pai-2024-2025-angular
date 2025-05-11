@@ -1,11 +1,10 @@
 import { Component, computed, effect, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ProductComponent } from '../../components/product/product.component';
 
 @Component({
   selector: 'app-shopping-cart',
   standalone: true,
-  imports: [CommonModule, ProductComponent],
+  imports: [ ProductComponent],
   templateUrl: './carrito-compra.component.html',
   styleUrl: './carrito-compra.component.scss',
 })

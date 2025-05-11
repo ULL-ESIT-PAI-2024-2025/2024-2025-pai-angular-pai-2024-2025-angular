@@ -2,14 +2,15 @@
   <h2>Shopping Cart</h2>
 
   <div class="cart-products">
+  @for (product of products; track product.id) {
     <app-product
-      *ngFor="let product of products"
       [name]="product.name"
       [price]="product.price"
       (quantityChange)="updateCart($event, product.id)"
     >
     </app-product>
-  </div>
+  }
+</div>
 
   <div class="cart-summary">
     <p>Total Price: ${{ totalPrice() }}</p>
