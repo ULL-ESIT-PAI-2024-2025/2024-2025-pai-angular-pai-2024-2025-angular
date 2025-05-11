@@ -1,0 +1,14 @@
+<div class="product">
+  <p>{{ name }} (${{ price }})</p>
+  <p>Quantity: {{ quantity() }}</p>
+  <div class="product-actions">
+    <button class="btn btn-add" (click)="addItem()">Add</button>
+    <button
+      class="btn btn-remove"
+      (click)="removeItem()"
+      [disabled]="quantity() === 0"
+    >
+      Remove
+    </button>
+  </div>
+</div>

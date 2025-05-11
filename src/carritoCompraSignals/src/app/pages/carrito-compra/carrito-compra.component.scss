@@ -1,0 +1,43 @@
+$background-color: #f8f9fa;
+$text-color: #333;
+$accent-color: #6c757d;
+$shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+:host {
+  display: block;
+  font-family: Arial, sans-serif;
+}
+
+.cart-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: $background-color;
+  border-radius: 8px;
+  box-shadow: $shadow;
+
+  h2 {
+    font-size: 1.8rem;
+    color: $text-color;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+
+.cart-products {
+  margin-bottom: 20px;
+}
+
+.cart-summary {
+  p {
+    font-size: 1.1rem;
+    color: $text-color;
+    margin: 8px 0;
+  }
+
+  .cart-message {
+    font-size: 0.9rem;
+    color: $accent-color;
+    font-style: italic;
+  }
+}
