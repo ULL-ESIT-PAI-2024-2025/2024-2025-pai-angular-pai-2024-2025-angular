@@ -3,7 +3,7 @@
   <div class="header">
     <h1>Texas Hold'em</h1>
     <div class="header-actions">
-      <p>{{ winnerMessage }}</p>
+      <p>{{ pokerService.winnerMessageSignal() }}</p>
       <button (click)="dealNewGame()" class="btn btn-primary">New Game</button>
     </div>
   </div>
@@ -11,11 +11,11 @@
   <div class="community-cards">
     <h2>Community Cards</h2>
     <div class="card-container">
-      @for (card of communityCards.getCards(); track $index) {
+      @for (card of pokerService.communityCardsSignal().getCards(); track $index) {
       <app-card
         [imagePath]="'assets/images/' + card.getCardName() + '.png'"
         [interactive]="false"
-        [faceDown]="this.getFaceDown($index)"
+        [faceDown]="pokerService.faceDownSignal()[$index]"
         class="card"
       ></app-card>
       }
@@ -26,17 +26,17 @@
   <div class="game-area">
     <!-- Jugadores oponentes -->
     <div class="opponents">
-      @for (player of this.rivalsHands; track player; let i = $index) {
+      @for (player of pokerService.rivalsHandsSignal(); track player; let i = $index) {
       <div class="player">
         <div class="player-info">
-          <h3>{{ this.rivalsHands[i].getLabel() }}</h3>
+          <h3>{{ pokerService.rivalsHandsSignal()[i].getLabel() }}</h3>
         </div>
         <div class="player-cards">
-          @for (card of this.rivalsHands[i].getCards(); track card) {
+          @for (card of pokerService.rivalsHandsSignal()[i].getCards(); track card) {
           <app-card
             [imagePath]="'assets/images/' + card.getCardName() + '.png'"
             [interactive]="false"
-            [faceDown]="!faceUp"
+            [faceDown]="!pokerService.faceUpSignal()"
             class="card"
           ></app-card>
           }
@@ -51,32 +51,32 @@
       <div class="action-buttons">
         <button
           (click)="dealFlop()"
-          [disabled]="this.disabledButtons[0]"
-          [class.disabled]="this.disabledButtons[0]"
+          [disabled]="pokerService.disabledButtonsSignal()[0]"
+          [class.disabled]="pokerService.disabledButtonsSignal()[0]"
           class="btn btn-danger"
         >
           Flop
         </button>
         <button
           (click)="dealTurn()"
-          [disabled]="this.disabledButtons[1]"
-          [class.disabled]="this.disabledButtons[1]"
+          [disabled]="pokerService.disabledButtonsSignal()[1]"
+          [class.disabled]="pokerService.disabledButtonsSignal()[1]"
           class="btn btn-primary"
         >
           Turn
         </button>
         <button
           (click)="dealRiver()"
-          [disabled]="this.disabledButtons[2]"
-          [class.disabled]="this.disabledButtons[2]"
+          [disabled]="pokerService.disabledButtonsSignal()[2]"
+          [class.disabled]="pokerService.disabledButtonsSignal()[2]"
           class="btn btn-primary"
         >
           River
         </button>
         <button
           (click)="evaluateHands()"
-          [disabled]="this.disabledButtons[3]"
-          [class.disabled]="this.disabledButtons[3]"
+          [disabled]="pokerService.disabledButtonsSignal()[3]"
+          [class.disabled]="pokerService.disabledButtonsSignal()[3]"
           class="btn btn-warning"
         >
           Evaluate
@@ -88,7 +88,7 @@
     <div class="player-hand">
       <h2>Your Hand</h2>
       <div class="card-container">
-        @for (card of this.playerHand.getCards(); track card) {
+        @for (card of pokerService.playerHandSignal().getCards(); track card) {
         <app-card
           [imagePath]="'assets/images/' + card.getCardName() + '.png'"
           [interactive]="true"
@@ -97,7 +97,7 @@
         }
       </div>
       <div class="player-info">
-        <span>{{ this.playerHand.getLabel() }}</span>
+        <span>{{ pokerService.playerHandSignal().getLabel() }}</span>
       </div>
     </div>
   </div>
