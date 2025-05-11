@@ -1,0 +1,37 @@
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <img src="assets/img/icono-ull-blanco.png" alt="Logo" class="header-logo">
+    <span class="navbar-item">Universidad de La Laguna</span>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title has-text-centered">Demostración de Directivas en Angular 19</h2>
+
+    <!-- Ejemplo de ngIf -->
+    <div class="box">
+      <h3 class="subtitle">ngIf</h3>
+      <button class="button is-info" (click)="isVisible = !isVisible">Alternar Visibilidad</button>
+      <p *ngIf="isVisible" class="content">Este párrafo se muestra solo si isVisible es true.</p>
+    </div>
+
+    <!-- Ejemplo de ngFor -->
+    <div class="box">
+      <h3 class="subtitle">ngFor</h3>
+      <ul>
+        <li *ngFor="let item of items; index as i" class="content">{{ i + 1 }}. {{ item }}</li>
+      </ul>
+    </div>
+
+    <!-- Ejemplo de @defer -->
+    <div class="box">
+      <h3 class="subtitle">Deferred Loading</h3>
+      @defer (on viewport) {
+        <p class="content">{{ deferredContent }}</p>
+      } @placeholder {
+        <p class="content has-text-grey">Cargando contenido...</p>
+      }
+    </div>
+  </div>
+</section>
