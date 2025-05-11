@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from '@/components/card/card.component';
 import { Deck } from '@/class/deck';
