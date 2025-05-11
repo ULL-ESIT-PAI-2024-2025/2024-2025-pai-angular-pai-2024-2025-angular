@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./directives-demo.component.scss']
 })
 export class DirectivesDemoComponent {
-  isVisible: boolean = true;
+  isVisible: boolean = false;
   items: string[] = ['Manzana', 'Plátano', 'Naranja'];
   deferredContent: string = 'Este contenido se carga de forma diferida';
 }
